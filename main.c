@@ -4,17 +4,17 @@
 
 int main(int argc, char *argv[])
 {
-    char input[100];
-    FILE* fp;
-    int i;
-    fp = fopen("sample. txt" , "w"); 
-    
-    for(i=0;i<3;i++)
+    FILE*fp = NULL;
+    char c;
+    fp = fopen("sample. txt", "r");
+    if(fp == NULL)
+      printf("파일을 못열음\n");
+      
+    while((c=fgetc(fp))!= EOF)
     {
-                    printf("input a word :");
-    scanf("%s", input);
-    fprintf(fp, "%s\n", input);
+                        putchar(c);
     }
+    
     fclose(fp);
     
     system("PAUSE");	
