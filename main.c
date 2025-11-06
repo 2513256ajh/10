@@ -4,9 +4,18 @@
 
 int main(int argc, char *argv[])
 {
-    char str[30] = "happy C programming";
+    char input[100];
+    FILE* fp;
+    int i;
+    fp = fopen("sample. txt" , "w"); 
     
-    printf("string's length : %s\n : %i", str, strlen(str));
+    for(i=0;i<3;i++)
+    {
+                    printf("input a word :");
+    scanf("%s", input);
+    fprintf(fp, "%s\n", input);
+    }
+    fclose(fp);
     
     system("PAUSE");	
     return 0;
